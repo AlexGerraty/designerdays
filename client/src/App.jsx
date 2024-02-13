@@ -1,21 +1,41 @@
-import './App.css'
-import {Route, Routes} from "react-router-dom";
-import IndexPage from './pages/IndexPage';
-import LoginPage from './pages/LoginPage';
-import Layout from './components/Layout';
-import RegisterPage from './pages/RegisterPage';
+import { Outlet } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+import Nav from './components/Sidebar';
+
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route index element={<IndexPage/>} /> 
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      </Route>
-     
-    </Routes>
-  )
+    <ApolloProvider client={client}>
+        <Nav />
+        <Outlet />
+    </ApolloProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
 import {Link} from "react"
-import Auth from "../../../server/utils/Auth"
+import Auth from "../utils/auth"
 export default function Nav() {
     return (
       function Nav() {

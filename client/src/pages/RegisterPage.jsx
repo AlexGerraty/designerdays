@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
-function RegisterPage() {
+function Register() {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
@@ -14,8 +14,8 @@ function RegisterPage() {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
+        fullName: formState.firstName,
+    
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -45,4 +45,4 @@ function RegisterPage() {
     )
 }
 
-export default RegisterPage;
+export default Register;
