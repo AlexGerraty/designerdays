@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 
+
 const designerSchema = new Schema({
   firstname: {
     type: String,
@@ -16,21 +17,19 @@ const designerSchema = new Schema({
     required: true,
   },
   price: {
-    type: Currency,
+    type: String,
     required: true,
+    min: 50.00
   },
   expertise: {
     type: String,
     required: true,
-  },
-  booking: {
-    types: Date,
-    required: false,
+    
   }
 });
 
 
 
-const Designer = model('Designer', designerSchemaSchema);
+const Designer = model('Designer', designerSchema);
 
 module.exports = Designer;

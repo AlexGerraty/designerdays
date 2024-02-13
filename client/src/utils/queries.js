@@ -10,6 +10,7 @@ export const QUERY_DESIGNERS = gql`
       image
       expertise {
         _id
+    
       }
     }
   }
@@ -18,14 +19,14 @@ export const QUERY_DESIGNERS = gql`
 
 export const QUERY_ALL_DESIGNERS = gql`
   {
-    products {
+    designers {
       _id
       name
       description
       price
       image
       expertise {
-        name
+        _id
       }
     }
   }

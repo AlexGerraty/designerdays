@@ -6,7 +6,7 @@ import App from './App.jsx';
 import Index from './pages/IndexPage.jsx';
 import Login from './pages/LoginPage.jsx';
 import Register from './pages/RegisterPage.jsx';
-import Designer from './pages/Desinger.jsx';
+import Designer from './pages/Designer.jsx';
 
 const router = createBrowserRouter([
   {

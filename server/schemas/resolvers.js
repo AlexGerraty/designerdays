@@ -1,13 +1,32 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Designer, Booking } = require('../models');
-const { signToken } = require('../utils/auth');
+const { User, Designer, Expertise} = require('../models');
+const { signToken, AuthenticationError } = require('../utils/Auth');
 
 
 const resolvers = {
     Query: {
-
-    };
-
+        designers: async (parent, args, context) => {
+          const designers = await Designer.find();
+          return designers.map(designer => {
+            return {
+              id: designer._id,
+              firstname: designer.firstname,
+              lastname: designer.lastname,
+              description: designer.description,
+              price: designer.price,
+              expertise: designer.expertise
+            };
+          });
+        },
+        expertises:  async (parent, args, context) => {
+          const expertises = await Expertise.find();
+          return expertises.map(expertise => {
+            return {
+              id: expertise._id,
+              name: expertise.name
+            };
+          });
+      },
+    },
     Mutation: {
         addUser: async (parent, args) => {
           const user = await User.create(args);
@@ -38,3 +57,5 @@ const resolvers = {
             return { token, user };
         },
     }};
+
+    module.exports = resolvers;

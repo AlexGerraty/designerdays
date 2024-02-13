@@ -1,5 +1,5 @@
 const User = require('./User');
-const Designer = require('./Designer');
-const Booking = require('./Booking');
+const Designer = require('./Designers');
+const Expertise = require('./Expertise');
 
-module.exports = { User, Designer, Booking };
+module.exports = { User, Designer, Expertise };
