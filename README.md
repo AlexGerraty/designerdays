@@ -32,8 +32,8 @@ Thank you for choosing DesignerDays! Happy gardening! 🌿
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+![Front Page](designerdays.png)
+![Designer Cards](designerdays2.png)
 
 ## Installation
 
