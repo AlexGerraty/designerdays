@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
+
 function Register() {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
@@ -31,14 +32,19 @@ function Register() {
   };
 
     return (
-        <div>
-            <h1 className="text-4xl text-center"> Register</h1>
-            <form className="max-w-3xl mx-auto" onSubmit={handleFormSubmit}>
+        <div style={{position: "fixed",
+        top: "25%",
+        left: "40%",
+        width: "400px",
+        padding: "30px",
+        textAlign: "center"}}>
+            <h1> Register</h1>
+            <form onSubmit={handleFormSubmit}>
                 <input type="name" placeholder="Your Name"  onChange={handleChange}/>
                 <input type= "email" placeholder="email@here.com"  onChange={handleChange}/>
                 <input type= "password" placeholder="******"  onChange={handleChange}/>
-                <button className="primary">Register</button>
-                <h3 className="text-center m-2"> Already have an account? <Link className="underline text-black" to={'/login'}>Login Here</Link></h3>
+                <button>Register</button>
+                <h3> Already have an account? <Link to={'/login'}>Login Here</Link></h3>
                 </form>
         </div>
         

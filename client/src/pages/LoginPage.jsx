@@ -30,18 +30,23 @@ import Auth from '../utils/auth';
         };
 
     return (
-        <div>
-            <h1 className="text-4xl text-center"> Login</h1>
-            <form className="max-w-3xl mx-auto" onSubmit={handleFormSubmit}>
+        <div style={{position: "fixed",
+        top: "25%",
+        left: "40%",
+        width: "400px",
+        padding: "30px",
+        textAlign: "center"}}>
+            <h1> Login</h1>
+            <form onSubmit={handleFormSubmit}>
                 <input type= "email" placeholder="email@here.com" onChange={handleChange}/>
                 <input type= "password" placeholder="******"  onChange={handleChange}/>
-                <button className="primary">Login</button>
+                <button>Login</button>
                 {error ? (
                 <div>
-                     <p className="error-text">The provided credentials are incorrect</p>
+                     <p>The provided credentials are incorrect</p>
                 </div>
                 ) : null}
-                <h3 className="text-center m-2"> Are you new here? <Link className="underline text-black" to={'/register'}>Join us</Link></h3>
+                <h3> Are you new here? <Link to={'/register'}>Join us</Link></h3>
                 </form>
         </div>
         

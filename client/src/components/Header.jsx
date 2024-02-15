@@ -1,12 +1,13 @@
-import { Typography } from 'antd'
+import { Typography, Col } from 'antd'
 import { Link } from 'react-router-dom'
 import Auth from "../utils/auth"
 export default function Header() {
   const { Title } = Typography; 
 
-    function showNavigation() {
-      if (Auth.loggedIn()) {
-        return (
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <Col span={8} textAlign="center">
           <ul>
             <li>
               <Link to="/">
@@ -20,9 +21,11 @@ export default function Header() {
               </a>
             </li>
           </ul>
-        );
-      } else {
-        return (
+        </Col>
+      );
+    } else {
+      return (
+        <Col span={8} textAlign="center">
           <ul>
             <li>
               <Link to="/register">
@@ -35,13 +38,14 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-        );
-      }
+        </Col>
+      );
     }
+  }
   
 
   return (
-    <header style={{ backgroundColor: "#c0c0c0", height: "20vh", top: "0", left: "0", width: "100vw",  }}>
+    <header>
       <a href="/" >
       <Title style={{ margin: "150px 10px 10px 200px"}} >designerdays.</Title>
       </a>
