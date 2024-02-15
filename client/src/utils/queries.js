@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_DESIGNERS = gql`
-  query getDesigners($desinger: ID) {
-    products(designer: $designer) {
+  query getDesigners($designer: ID) {
+    designers(designer: $designer) {
       _id
-      name
+      firstname
+      lastname
       description
       price
       image
@@ -21,13 +22,11 @@ export const QUERY_ALL_DESIGNERS = gql`
   {
     designers {
       _id
-      name
-      description
+      firstname
+      lastname
       price
       image
-      expertise {
-        _id
-      }
+      
     }
   }
 `;

@@ -14,7 +14,7 @@ function Register() {
       variables: {
         email: formState.email,
         password: formState.password,
-        fullName: formState.firstName,
+        fullName: formState.fullName,
     
       },
     });
@@ -36,7 +36,7 @@ function Register() {
             <form className="max-w-3xl mx-auto" onSubmit={handleFormSubmit}>
                 <input type="name" placeholder="Your Name"  onChange={handleChange}/>
                 <input type= "email" placeholder="email@here.com"  onChange={handleChange}/>
-                <input type= "password" placeholder="Password"  onChange={handleChange}/>
+                <input type= "password" placeholder="******"  onChange={handleChange}/>
                 <button className="primary">Register</button>
                 <h3 className="text-center m-2"> Already have an account? <Link className="underline text-black" to={'/login'}>Login Here</Link></h3>
                 </form>

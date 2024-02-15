@@ -1,8 +1,9 @@
 import DesignerList from '../components/DesignerList.jsx'
-
+import Moto from '../components/Moto.jsx'
 export default function IndexPage () {
     return ( 
-        <div className="bg bg-red-400">
+        <div>
+            <Moto />
             <DesignerList />
         </div>
    )

@@ -1,15 +1,15 @@
-const { Schema, model } = require('mongoose');
-
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const expertiseSchema = new Schema({
-  name: {
+    name: {
     type: String,
-    required: true,
+    required: false,
   }
 });
 
 
 
-const Expertise = model('Expertise', expertiseSchema);
+const Expertise = mongoose.model('Expertise', expertiseSchema);
 
 module.exports = Expertise;

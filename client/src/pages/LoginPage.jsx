@@ -22,10 +22,10 @@ import Auth from '../utils/auth';
         };
       
         const handleChange = (event) => {
-          const { name, value } = event.target;
+          const { email, value } = event.target;
           setFormState({
             ...formState,
-            [name]: value,
+            [email]: value,
           });
         };
 
@@ -34,7 +34,7 @@ import Auth from '../utils/auth';
             <h1 className="text-4xl text-center"> Login</h1>
             <form className="max-w-3xl mx-auto" onSubmit={handleFormSubmit}>
                 <input type= "email" placeholder="email@here.com" onChange={handleChange}/>
-                <input type= "password" placeholder="Password"  onChange={handleChange}/>
+                <input type= "password" placeholder="******"  onChange={handleChange}/>
                 <button className="primary">Login</button>
                 {error ? (
                 <div>

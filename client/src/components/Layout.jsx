@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Nav from "./Sidebar";
 import { Outlet } from "react-router-dom";
 
 export default function Layout() {
@@ -7,7 +7,7 @@ export default function Layout() {
     return (
         <div>
             <Header />
-            <Sidebar />
+            <Nav />
             <Outlet />
         </div>
     )

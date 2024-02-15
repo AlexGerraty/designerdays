@@ -7,7 +7,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Nav from './components/Sidebar';
 import Header from './components/Header';
 
 
@@ -34,7 +33,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
         <Header />
-        <Nav />
         <Outlet />
     </ApolloProvider>
   );

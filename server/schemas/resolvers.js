@@ -4,29 +4,27 @@ const { signToken, AuthenticationError } = require('../utils/Auth');
 
 const resolvers = {
     Query: {
-        designers: async (parent, args, context) => {
-          const designers = await Designer.find();
-          return designers.map(designer => {
-            return {
-              id: designer._id,
-              firstname: designer.firstname,
-              lastname: designer.lastname,
-              description: designer.description,
-              price: designer.price,
-              expertise: designer.expertise
-            };
-          });
+        designer: async (parent, { _id }) => {
+          return await Designer.findById(_id).populate('designer');
         },
-        expertises:  async (parent, args, context) => {
-          const expertises = await Expertise.find();
-          return expertises.map(expertise => {
-            return {
-              id: expertise._id,
-              name: expertise.name
+        expertises: async () => {
+          return await Expertise.find();
+        },
+        designers: async (parent, { expertise, firstname }) => {
+          const params = {};
+    
+          if (expertise) {
+            params.expertise = expertise;
+          }
+    
+          if (firstname) {
+            params.firstname = {
+              $regex: firstname
             };
-          });
-      },
+          }
+          return await Designer.find(params).populate('expertise');
     },
+  },
     Mutation: {
         addUser: async (parent, args) => {
           const user = await User.create(args);
@@ -37,8 +35,10 @@ const resolvers = {
         updateUser: async (parent, args, context) => {
             if (context.user) {
               return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-            };
-        },
+            }
+
+            throw AuthenticationError;
+          },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
       

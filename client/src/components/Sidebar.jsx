@@ -1,7 +1,5 @@
-import {Link} from "react"
+import {Link} from "react-router-dom"
 import Auth from "../utils/auth"
-export default function Nav() {
-    return (
       function Nav() {
 
         function showNavigation() {
@@ -14,7 +12,6 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li className="mx-1">
-                  {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                   <a href="/" onClick={() => Auth.logout()}>
                     Logout
                   </a>
@@ -23,13 +20,13 @@ export default function Nav() {
             );
           } else {
             return (
-              <ul className="flex-row">
-                <li className="mx-1">
+              <ul>
+                <li>
                   <Link to="/register">
-                    Signup
+                    Register
                   </Link>
                 </li>
-                <li className="mx-1">
+                <li>
                   <Link to="/login">
                     Login
                   </Link>
@@ -43,8 +40,6 @@ export default function Nav() {
           <header className="flex-row px-1">
             <h1>
               <Link to="/">
-                <span role="img" aria-label="shopping bag">🛍️</span>
-                -Shop-Shop
               </Link>
             </h1>
       
@@ -54,6 +49,5 @@ export default function Nav() {
           </header>
         );
       }
-    )}
       
-    
+export default Nav;

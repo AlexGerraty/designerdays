@@ -1,131 +1,116 @@
 const db = require('./connection');
-const { User, Designer, Booking } = require('../models');
+const { User, Designer, Expertise } = require('../models/index');
 const cleanDB = require('./cleanDB');
-const  { expertise } = require('../models/Designers')
 
 db.once('open', async () => {
   await cleanDB('User', 'users');
-  await cleanDB('Designers', 'designers');
-  await cleanDB('Booking', 'bookings');
+  await cleanDB('Designer', 'designers');
+  await cleanDB('Expertise', 'expertises');
 
-  const expertise = await expertise.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+  const expertises = await Expertise.insertMany([
+    { expertise: 'Horticulture' },
+    { expertise: 'Coastal' },
+    { expertise: 'Courtyards' },
+    { expertise: 'Native' },
+    { expertise: 'Formal gardens' },
+    { expertise: 'Residential' },
+    { expertise: 'City Balconies' },
+    { expertise: 'Japanese Design' }
   ]);
 
-  console.log('expertise seeded');
+  console.log('expertises seeded');
 
   const designers = await Designer.insertMany([
     {
-      name: 'Tin of Cookies',
+      firstname: 'Sarah',
+      lastname: 'Bateman',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      experstise: experstise[0]._id,
-      price: 2.99,
+        'Sarah Bateman aims to create gardens for living in. Integrating design and horticultural expertise there is a keen focus on planting design and choosing plants and materials suited to the setting. Customised projects include Sarah’s specialities in cottage and courtyard design.',
+      image: './images/sarahbateman.webp',
+      experstise: expertises[0]._id,
+      price: 200,
      
     },
     {
-      name: 'Canned Coffee',
+      firstname: 'Sam',
+      lastname: 'Fisher',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
+        'Sam Fisher begins his garden design journey by listening and understanding as much as he can about the client, their needs and beliefs. In doing this he aims to deliver a garden that truly connects with both home and owner which becomes a place of engagement and delight. Sams specialities include coastal and rural gardens.',
+      image: './images/samfisher.webp',
+      experstise: expertises[1]._id,
+      price: 190,
+     
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
+      firstname: 'Mary',
+      lastname: 'Koulis',
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+        'Mary Koulis uses a consistent design approach refined over many years that blends proven processes and full transparency = from concept to delivery. Mary delivers gardens that are practical, enduring and bespoke. She is well versed in designing gardens for courtyards, front yards and formal applications using plants that thrive in a range of conditions.',
+      image: './images/mariakoulis.webp',
+      experstise: expertises[2]._id,
+      price: 175,
+     
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
+      firstname: 'Phillip',
+      lastname: 'Jones',
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
+        'Philip Jones designs native gardens in the natural style pioneered by Melbourne designers Edna Walling and Gordon Ford. Philip’s design approach is suitable for contemporary and traditional contexts and welcomes enquiries for designs in urban and rural settings.',
+      image: './images/philipjones.webp',
+      experstise: expertises[3]._id,
+      price: 120,
+     
     },
     {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
+      firstname: 'Jason',
+      lastname: 'Chen',
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
+        'Jason Chen is a creative personality that he combines with the love of outdoors. Jason has designed gardens for over 20 years  with the emphasis on producing high quality spaces with that personal touch. Taking on difficult city spaces with well considered planning can be conquered with outstanding results. Jason’s specialities in city balconies and terraces along with larger scale commercial designs have sen him win numerous landscaping awards..',
+      image: './images/jasonchen.webp',
+      experstise: expertises[6]._id,
+      price: 165,
+     
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
+      firstname: 'Kate',
+      lastname: 'Wiseman',
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
+        'Kate Wiseman is a highly respected garden designer that brings her passion for beautiful and functional outdoor spaces. She grew up around gardens as her father was a horticulturalist. Kates formal designs have been showcased at the Melbourne International Flower and Garden Show. She enjoys designing large formal gardens that include lifestyle amenity such as swimming pools.',
+      image: './images/katewiseman.webp',
+      experstise: expertises[4]._id,
+      price: 210,
+     
     },
     {
-      name: 'Tablet',
-      category: categories[2]._id,
+      firstname: 'Kevin',
+      lastname: 'Gerard',
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
+        'Kevin Gerrard’s core belief is that garden designs should be affordable and available to as many people as possible. As a result Kevin has specialised in residential gardens, balconies and courtyards with an emphasis on function, beauty, simplicity and texture. ',
+      image: './images/kevingerrard.webp',
+      experstise: expertises[5]._id,
+      price: 150,
+     
     },
     {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
+      firstname: 'Kristina',
+      lastname: 'Mason',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
+        'Kristina Mason believes a fantastic garden begins with good design. Krisitna finds designing gardens for others inspiring and rewarding work. She gets great satisfaction from transforming an outdoor space into a unique and beautiful place that connects people with nature. Kristina’s specialities are formal gardens with a particular joy in tree selection. ',
+      image: './images/kristinamason.webp',
+      experstise: expertises[4]._id,
+      price: 180,
+     
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
-    },
-    {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      firstname: 'Lucinda',
+      lastname: 'James',
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
+        'Lucinda James uses the principles of sustainable and organic Japanese design. She designs concepts that are simple, clean designs. She believes gardens make a real difference to the health and wellbeing of her clients. ',
+      image: './images/lucindajames.webp',
+      experstise: expertises[7]._id,
+      price: 120,
+     
     },
-    {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
-    },
-    {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
-      quantity: 600
-    }
   ]);
 
   console.log('designers seeded');

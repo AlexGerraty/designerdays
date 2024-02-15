@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server --ignore client",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "develop": "concurrently \"cd server && node server.js\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && cd config && npm run seed.js",
+    "seed": "cd server && cd config && node seed.js",
     "build": "cd client && npm run build"
   },
   "author": "",
@@ -26,6 +26,7 @@
     "jwt-decode": "^4.0.0",
     "mongoose": "^8.1.2",
     "nodemon": "^3.0.3",
+    "path": "^0.12.7",
     "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
