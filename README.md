@@ -29,6 +29,12 @@ DesignerDays leverages cutting-edge technologies to streamline the process of fi
 We value your feedback! If you have any questions, suggestions, or encounter any issues while using the app, please don't hesitate to [contact us](mailto:info@designerdays.com). Our team is here to assist you and ensure you have a pleasant experience with DesignerDays.
 
 Thank you for choosing DesignerDays! Happy gardening! 🌿
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+
 ## Installation
 
 1. Clone the repository:
