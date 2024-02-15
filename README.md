@@ -1,26 +1,33 @@
-# DesignerDays App
 
-DesignerDays is an application that connects users with garden designers of different areas at affordable prices. Users can browse through a variety of designers, view their profiles, and hire them for their gardening projects. The app utilizes a combination of modern technologies such as Ant Design, GraphQL, Express, MongoDB Atlas, Node.js, React, and Apollo Server to provide a seamless user experience.
+DesignerDays App
+DesignerDays is an innovative platform connecting users with garden designers from various areas, providing affordable services tailored to their needs. The app offers a user-friendly interface and a wide range of features to facilitate seamless communication and collaboration between users and designers.
 
-## Features
+Features
+Find Designers: Browse through a diverse selection of garden designers based on different areas and expertise.
+View Profiles: Explore detailed profiles of designers, including their portfolio, expertise, pricing, and reviews from previous clients.
+Hire Designers: Easily hire designers directly through the app for your gardening projects.
+Responsive Design: Enjoy a smooth and consistent experience across devices with responsive design.
+Technologies Used
+Frontend: React, Ant Design
+Backend: GraphQL, Apollo Server
+Database: MongoDB Atlas
+Deployment: Render
+Visit the Deployed App
+You can access the deployed DesignerDays app here. Explore the platform to discover talented garden designers and kickstart your next gardening project with ease!
 
-- **Browse Designers**: Users can explore a list of garden designers categorized by different areas.
-- **View Designer Profiles**: Users can view detailed profiles of designers, including their expertise, description, and pricing.
-- **Hire Designers**: Users can hire designers directly through the app for their gardening projects.
-- **Responsive Design**: The app is built with a responsive design, ensuring optimal user experience across devices.
+About the Application
+DesignerDays leverages cutting-edge technologies to streamline the process of finding and hiring garden designers. Whether you're looking to revamp your backyard, create a stunning landscape, or simply spruce up your garden, DesignerDays has you covered. Experience the convenience and affordability of our platform today!
 
-## Technologies Used
+Feedback and Support
+We value your feedback! If you have any questions, suggestions, or encounter any issues while using the app, please don't hesitate to contact us. Our team is here to assist you and ensure you have a pleasant experience with DesignerDays.
 
-- **Frontend**: React, Ant Design, Apollo Client
-- **Backend**: Node.js, Express, GraphQL, Apollo Server
-- **Database**: MongoDB Atlas
-
+Thank you for choosing DesignerDays! Happy gardening! 🌿
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/designerdays.git
+git clone https://github.com/alexgerraty/designerdays.git
 ```
 
 2. Navigate to the project directory:
@@ -47,6 +54,4 @@ npm start
 
 One of the challenges faced in the app is with rendering data on the `/designer/:designerId` URL. This difficulty arises due to the asynchronous nature of fetching designer data from the backend and rendering it on the frontend. Since data fetching operations can take time to complete, there may be delays in loading designer details, resulting in empty or incomplete content being displayed to the user.
 
-To address this issue, consider implementing loading indicators or placeholders to inform users that data is being fetched. Additionally, ensure proper error handling mechanisms are in place to gracefully handle situations where data retrieval fails. Techniques such as caching and prefetching data can also be employed to improve the overall user experience and mitigate rendering issues.
 
-By addressing these challenges effectively, you can enhance the reliability and performance of the app, providing users with a seamless browsing experience when accessing designer details.
