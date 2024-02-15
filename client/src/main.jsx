@@ -7,7 +7,7 @@ import Index from './pages/IndexPage.jsx';
 import Login from './pages/LoginPage.jsx';
 import Register from './pages/RegisterPage.jsx';
 import Designer from './pages/Designer.jsx';
-
+// created router and relevent paths
 const router = createBrowserRouter([
   {
     path: '/',
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <Register />
       }, 
          {
-        path: '/designers/:id',
+        path: '/designer/:designerId'  ,
         element: <Designer />
       }
     ]

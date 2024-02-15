@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-
+// Login function needs touching up as it is pulling a 400 request
     function Login() {
         const [formState, setFormState] = useState({ email: '', password: '' });
         const [login, { error }] = useMutation(LOGIN);
@@ -22,10 +22,10 @@ import Auth from '../utils/auth';
         };
       
         const handleChange = (event) => {
-          const { email, value } = event.target;
+          const { name, value } = event.target;
           setFormState({
             ...formState,
-            [email]: value,
+            [name]: value,
           });
         };
 
@@ -38,8 +38,8 @@ import Auth from '../utils/auth';
         textAlign: "center"}}>
             <h1> Login</h1>
             <form onSubmit={handleFormSubmit}>
-                <input type= "email" placeholder="email@here.com" onChange={handleChange}/>
-                <input type= "password" placeholder="******"  onChange={handleChange}/>
+                <input type= "email" name= "email" placeholder="email@here.com" onChange={handleChange}/>
+                <input type= "password" name= "email" placeholder="******"  onChange={handleChange}/>
                 <button>Login</button>
                 {error ? (
                 <div>

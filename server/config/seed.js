@@ -1,7 +1,7 @@
 const db = require('./connection');
 const { User, Designer, Expertise } = require('../models/index');
 const cleanDB = require('./cleanDB');
-
+// Seeding data
 db.once('open', async () => {
   await cleanDB('User', 'users');
   await cleanDB('Designer', 'designers');

@@ -4,6 +4,7 @@ const { signToken, AuthenticationError } = require('../utils/Auth');
 
 const resolvers = {
     Query: {
+      // queries
         designer: async (parent, { _id }) => {
           return await Designer.findById(_id).populate('designer');
         },
@@ -26,12 +27,14 @@ const resolvers = {
     },
   },
     Mutation: {
+      // add user mutation
         addUser: async (parent, args) => {
           const user = await User.create(args);
           const token = signToken(user);
     
           return { token, user };
         },
+        // update user mutation
         updateUser: async (parent, args, context) => {
             if (context.user) {
               return await User.findByIdAndUpdate(context.user._id, args, { new: true });
@@ -39,6 +42,7 @@ const resolvers = {
 
             throw AuthenticationError;
           },
+          // Login mutation
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
       

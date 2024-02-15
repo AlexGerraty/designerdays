@@ -4,10 +4,11 @@ import Auth from "../utils/auth"
 export default function Header() {
   const { Title } = Typography; 
 
+  //Nav bar that stores user data and changes menu options upon succesful login
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <Col span={8} textAlign="center">
+        <Col span={8} style={{ width: 'fit-content', margin: 'auto', fontSize: "20px" }}>
           <ul>
             <li>
               <Link to="/">
@@ -15,7 +16,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+              
               <a href="/" onClick={() => Auth.logout()}>
                 Logout
               </a>
@@ -25,19 +26,19 @@ export default function Header() {
       );
     } else {
       return (
-        <Col span={8} textAlign="center">
-          <ul>
-            <li>
+        <Col span={8} style={{ width: 'fit-content', margin: 'auto', display:"flex", fontSize: "20px" }}>
+          
+            <div>
               <Link to="/register">
                 Register
               </Link>
-            </li>
-            <li>
+            </div>
+            <div>
               <Link to="/login">
                 Login
               </Link>
-            </li>
-          </ul>
+            </div>
+          
         </Col>
       );
     }
@@ -45,9 +46,9 @@ export default function Header() {
   
 
   return (
-    <header>
+    <header style={{backgroundColor: "silver"}}>
       <a href="/" >
-      <Title style={{ margin: "150px 10px 10px 200px"}} >designerdays.</Title>
+      <Title style={{ margin: "auto", width:"100vh"}} >designerdays.</Title>
       </a>
     
   
