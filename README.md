@@ -1,25 +1,32 @@
+# DesignerDays App
 
-DesignerDays App
 DesignerDays is an innovative platform connecting users with garden designers from various areas, providing affordable services tailored to their needs. The app offers a user-friendly interface and a wide range of features to facilitate seamless communication and collaboration between users and designers.
 
-Features
-Find Designers: Browse through a diverse selection of garden designers based on different areas and expertise.
-View Profiles: Explore detailed profiles of designers, including their portfolio, expertise, pricing, and reviews from previous clients.
-Hire Designers: Easily hire designers directly through the app for your gardening projects.
-Responsive Design: Enjoy a smooth and consistent experience across devices with responsive design.
-Technologies Used
-Frontend: React, Ant Design
-Backend: GraphQL, Apollo Server
-Database: MongoDB Atlas
-Deployment: Render
-Visit the Deployed App
-You can access the deployed DesignerDays app here. Explore the platform to discover talented garden designers and kickstart your next gardening project with ease!
+## Features
 
-About the Application
+- **Find Designers**: Browse through a diverse selection of garden designers based on different areas and expertise.
+- **View Profiles**: Explore detailed profiles of designers, including their portfolio, expertise, pricing, and reviews from previous clients.
+- **Hire Designers**: Easily hire designers directly through the app for your gardening projects.
+- **Responsive Design**: Enjoy a smooth and consistent experience across devices with responsive design.
+
+## Technologies Used
+
+- **Frontend**: React, Ant Design
+- **Backend**: GraphQL, Apollo Server
+- **Database**: MongoDB Atlas
+- **Deployment**: Render
+
+## Visit the Deployed App
+
+You can access the deployed DesignerDays app [here](https://designerdays.onrender.com/). Explore the platform to discover talented garden designers and kickstart your next gardening project with ease!
+
+## About the Application
+
 DesignerDays leverages cutting-edge technologies to streamline the process of finding and hiring garden designers. Whether you're looking to revamp your backyard, create a stunning landscape, or simply spruce up your garden, DesignerDays has you covered. Experience the convenience and affordability of our platform today!
 
-Feedback and Support
-We value your feedback! If you have any questions, suggestions, or encounter any issues while using the app, please don't hesitate to contact us. Our team is here to assist you and ensure you have a pleasant experience with DesignerDays.
+## Feedback and Support
+
+We value your feedback! If you have any questions, suggestions, or encounter any issues while using the app, please don't hesitate to [contact us](mailto:info@designerdays.com). Our team is here to assist you and ensure you have a pleasant experience with DesignerDays.
 
 Thank you for choosing DesignerDays! Happy gardening! 🌿
 ## Installation
